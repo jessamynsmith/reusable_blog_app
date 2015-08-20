@@ -1,5 +1,6 @@
 import os
 from setuptools import setup
+from blog import __version__
 
 with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()

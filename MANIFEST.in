@@ -1,4 +1,6 @@
 include LICENSE
 include README.rst
+recursive-exclude sslify *.pyc
+recursive-exclude test_project *.pyc
 recursive-include blog/static *
 recursive-include blog/templates *
