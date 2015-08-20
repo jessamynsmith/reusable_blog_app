@@ -2,8 +2,6 @@ include LICENSE
 include README.rst
 recursive-exclude sslify *.pyc
 recursive-exclude test_project *.pyc
-recursive-include blog/static *
-recursive-include blog/templates *
 recursive-include reusable_blog *.css
 recursive-include reusable_blog *.html
 recursive-include reusable_blog *.py
