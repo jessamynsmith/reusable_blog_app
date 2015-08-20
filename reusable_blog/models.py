@@ -13,7 +13,7 @@ class Tag(models.Model):
 
 class Post(models.Model):
     class Meta:
-        app_label="blog"
+        app_label="reusable_blog"
 
 	# author is linked to a logged in user in the "auth_user" table
     author = models.ForeignKey('auth.User')
