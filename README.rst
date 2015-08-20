@@ -13,12 +13,12 @@ Quick start
 
     INSTALLED_APPS = (
         ...
-        'reusable_blog_app',
+        'reusable_blog',
     )
 
 2. Include the polls URLconf in your project urls.py like this::
 
-    url(r'^blogs/', include('reusable_blog_app.urls')),
+    url(r'^blogs/', include('reusable_blog.urls')),
 
 3. Run `python manage.py migrate` to create the polls models.
 
