@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from django.conf import settings
 
 class Tag(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
@@ -16,7 +16,7 @@ class Post(models.Model):
         app_label="reusable_blog"
 
 	# author is linked to a logged in user in the "auth_user" table
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL)
 
     title = models.CharField(max_length=200)
     content = models.TextField()
