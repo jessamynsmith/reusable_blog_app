@@ -8,9 +8,6 @@ class Tag(models.Model):
     def __str__(self):
         return self.slug
 
-
-
-
 class Post(models.Model):
     class Meta:
         app_label="reusable_blog"
