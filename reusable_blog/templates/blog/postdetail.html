@@ -10,7 +10,7 @@
 			<h3>{{ post.title }}</h3>
 			<div class="row">
 				{% if not user.is_anonymous %}
-			    <a class="btn btn-default" href="{% url 'edit_post' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+			    <a href="{% url 'edit_post' pk=post.pk %}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
 				<div class="col-xs-9">
 					{% if post.image %}
 						<img src="media/{{ post.image}}">
