@@ -9,9 +9,9 @@
 		<div class="col-md-10 col-sm-9">
 			<h3>{{ post.title }}</h3>
 			<div class="row">
-			<a class="btn btn-default" href="{% url 'edit_post' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+				{% if not user.is_anonymous %}
+			    <a class="btn btn-default" href="{% url 'edit_post' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 				<div class="col-xs-9">
-					{% if not user.is_anonymous %}
 					{% if post.image %}
 						<img src="media/{{ post.image}}">
 					{% endif %}
@@ -21,7 +21,7 @@
 					{% load disqus_tags %}
 					{% set_disqus_title post.title %}
 					{% disqus_show_comments %}
-					{% endif %}
+                {% endif %}
 				</div>
 			</div>
 		</div>
