@@ -11,12 +11,14 @@
 				<div class="row">
 					<div class="col-xs-9">
 						<p>{{ post.content|truncatewords:30 }}</p>
-						<p><button class="btn btn-default" onclick="location.href = '/blog'" href = "{{ post.id }}">Read More</button> {{ post.published_date|safe }}|<strong>Views</strong>{{ post.views|safe }}|<strong>Tag</strong> {{ post.tag|safe }}</p>
+						<p><button class="btn btn-default" onclick="location.href = {{ post.id }}">Read More</button> <p>{{ post.published_date }}     |    <strong>Views</strong> {{ post.views }} |    <strong>Tag</strong> {{ post.tag }}</p>
 					</div>
+					{% if user.is_authenticated %}
                     <div class="col-xs-9">
 						<p>{{ post.content|truncatewords:30 }}</p>
-                        <p><button class="btn btn-default" onclick="location.href = '/blog'" href = "{{ new_post }}">Add Post</button></p>
+                        <p><a class="btn btn-default" href="{% url 'new_post' %}">Add Post</a></p>
                     </div>
+					{% endif %}
 				</div>
 				<br><br>
 			</div>
